@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Campus Connect is the premier bartering service network for college students. Campus Connect allows college students to trade or "barter" services or goods with other students, but not actual money is allowed to be used on the website. Collge students generally don't have much disposable income and Campus Connect attempts to address this pain point by allowing students recycle their goods/services for what they truly want.
+
+
