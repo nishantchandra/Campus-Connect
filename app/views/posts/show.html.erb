@@ -1,0 +1,8 @@
+<div class="each">
+  <%= @post.title %>
+  <%= @post.body %>
+  <%= link_to "All Posts", {:controller => "posts", :action => "index"} %>
+  <%= link_to "Delete Post", {:controller => "posts", :action => "destroy", :id => @post.id}, :method=>:delete %>
+
+
+</div>

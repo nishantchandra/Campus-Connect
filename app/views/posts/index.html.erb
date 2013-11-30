@@ -1,0 +1,14 @@
+<div class="posts">
+  <% if @posts.any? %>
+    <h3>Posts (<%= @posts.count %>)</h3>
+      <% @posts.each do |post| %>
+      <ol class ="individual">
+        <%= post.title %>
+        <%= link_to "More Info", {:controller => "posts", :action => "show", :id => post.id} %>
+      </ol>
+      <% end %>
+  <% end %>
+     <%= link_to "Create a Post", {:controller => "posts", :action => "new" } %>
+
+</div>
+
