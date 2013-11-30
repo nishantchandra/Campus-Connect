@@ -1,9 +1,12 @@
+<% provide(:title, 'Home') %>
 <!DOCTYPE html>
-<title>Campus Connect</title>
+ <title>Campus Connect | <%= yield(:title) %></title>
 <h1>Campus Connect<h1>
 
   <h3>Google Maps will go here eventually</h3>
 
+
+  <%= link_to "posts", :controller => "posts", :action => "index" %>
 
 
 
