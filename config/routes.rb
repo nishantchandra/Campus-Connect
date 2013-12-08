@@ -2,6 +2,7 @@ CampusConnect::Application.routes.draw do
 
   get "static_pages/home"
   resources :posts
+  resources :comments
 
    root :to => 'static_pages#home'
 

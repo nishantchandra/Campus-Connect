@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = []
+    @comments = Comments.find_all_by_posts_id(params[:id])
+    p @comments
   end
 
   def destroy

@@ -1,4 +1,4 @@
 class Comments < ActiveRecord::Base
-  validates :title, :body, presence: true
-  belongs_to :user
+  validates :title, :body, :posts_id, presence: true
+  belongs_to :post
 end
