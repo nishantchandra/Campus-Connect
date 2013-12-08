@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @college = College.find(params[:college_id])
+    @posts = []
+    @posts = Post.find_all_by_college_id(params[:college_id])
   end
 
   def show
     @post = Post.find(params[:id])
     @comments = []
     @comments = Comments.find_all_by_posts_id(params[:id])
-    p @comments
+    @college = College.find(params[:college_id])
   end
 
   def destroy
@@ -17,15 +19,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @post = Post.new(params.permit(:title, :body, :university))
-    # # Post.create(:title => params[:title], :body => params[:body], :university => params[:university])
-    # redirect_to "posts#index"
+    @college_id = params[:college_id]
   end
 
   def create
   @post = Post.new(post_params)
+  @post.college_id = params[:college_id]
     if @post.save
-      redirect_to posts_path
+      redirect_to posts_path(:college_id => params[:college_id])
     end
   end
 

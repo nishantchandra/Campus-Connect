@@ -12,6 +12,7 @@
   <%= f.label :university, class: "col-lg-2 control-label" %>
   <%= f.text_field :university %>
 </div>
+  <%= hidden_field_tag 'college_id', @college_id  %>
 <p><%= f.submit %></p>
 <% end %>
 </form>

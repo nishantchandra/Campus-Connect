@@ -4,11 +4,11 @@
       <% @posts.each do |post| %>
       <ol class ="individual">
         <%= post.title %>
-        <%= link_to "More Info", {:controller => "posts", :action => "show", :id => post.id} %>
+        <%= link_to "More Info", {:controller => "posts", :action => "show", :id => post.id, :college_id => @college.id} %>
       </ol>
       <% end %>
   <% end %>
-     <%= link_to "Create a Post", {:controller => "posts", :action => "new" } %>
+     <%= link_to "Create a Post", {:controller => "posts", :action => "new", :college_id => @college.id } %>
 
 </div>
 
