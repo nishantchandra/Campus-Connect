@@ -1,0 +1,11 @@
+<div class="each">
+      <% if @colleges.any? %>
+      <h3><%= @colleges.first.campus %></h3>
+      <% @colleges.each do |college| %>
+      <ol class ="individual">
+        <%= college.campus %>
+        <%= link_to "Posts", {:controller => "posts", :action => "index", :college_id => college.id} %>
+        </ol>
+      <% end %>
+     <% end %>
+</div>
