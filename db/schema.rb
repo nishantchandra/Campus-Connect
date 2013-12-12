@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20131212215015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "college_id"
+    t.string   "email"
   end
 
   add_index "posts", ["created_at"], name: "index_posts_on_created_at", using: :btree

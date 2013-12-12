@@ -8,6 +8,10 @@
   <%= f.label :body, class: "col-lg-2 control-label" %>
   <%= f.text_field :body %>
   </div>
+    <div class="form-group">
+    <%= f.label :email, class: "col-lg-2 control-label" %>
+    <%= f.text_field :email %>
+    </div>
   <%= hidden_field_tag 'college_id', @college_id  %>
 <p><%= f.submit %></p>
 <% end %>
