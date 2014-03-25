@@ -44,7 +44,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  gem 'shoulda-matchers'
+
 end
 
 group :production do
