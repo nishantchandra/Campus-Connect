@@ -30,6 +30,19 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @searchvalue = params[:searchcomments]
+    @comments = []
+    # @comments = Comments.find_by title: @searchvalue
+    @comments = Comments.where(:title => params[:searchcomments])
+    if @comments.any?
+      @postid = @comments[0].posts_id
+      @post = Post.find(@postid)
+      @collegeid = @post.college_id
+    end
+
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body, :email, :university)
