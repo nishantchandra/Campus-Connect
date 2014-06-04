@@ -1,0 +1,16 @@
+<h2>Search Results </h2>
+
+<h3> You searched for <%= @searchvalue %> </h3>
+ <% if @comments.any? %>
+      <h3>Comments (<%= @comments.count %>)</h3>
+       <% @comments.each do |comment| %>
+      <ol class ="individual">
+        <%= comment.title %>
+        <%= comment.body %>
+        </ol>
+      <% end %>
+
+
+ <%= link_to "Go Back", {:controller => "posts", :action => "show", :college_id => @collegeid, :id => @postid} %>
+
+<% end %>

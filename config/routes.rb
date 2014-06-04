@@ -5,6 +5,8 @@ CampusConnect::Application.routes.draw do
   resources :comments
   resources :colleges
 
+  post "posts/search" => "posts#search"
+
    root :to => 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

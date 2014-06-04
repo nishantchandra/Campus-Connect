@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comments.new(post_params)
-    p "Hellop hfefueh"
     @comment.posts_id = params[:posts_id]
     @college_id = params[:college_id]
     if @comment.save
