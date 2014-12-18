@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   def index
     @college = College.find(params[:college_id])
+    @collegeid = @college.id
     @posts = []
     @posts = Post.find_all_by_college_id(params[:college_id])
   end
 
   def show
     @post = Post.find(params[:id])
+    @collegeid = @post.college_id
     @comments = []
     @comments = Comments.find_all_by_posts_id(params[:id])
     @college = College.find(params[:college_id])
@@ -39,6 +41,18 @@ class PostsController < ApplicationController
       @postid = @comments[0].posts_id
       @post = Post.find(@postid)
       @collegeid = @post.college_id
+    end
+
+  end
+
+  def searchpost
+    @searchvalue = params[:searchvalue]
+    @posts = []
+    @collegeid = params[:temp]
+    # @comments = Comments.find_by title: @searchvalue
+    @posts = Post.where(:title => params[:searchvalue])
+    if @posts.any?
+     
     end
 
   end
