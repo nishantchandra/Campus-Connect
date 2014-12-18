@@ -1,0 +1,17 @@
+<h2>Search Results </h2>
+
+<h3> You searched for <%= @searchvalue %> </h3>
+ <% if @posts.any? %>
+      <h3>Posts (<%= @posts.count %>)</h3>
+       <% @posts.each do |post| %>
+      <ol class ="individual">
+        <%= post.title %>
+        <%= post.body %>
+        </ol>
+      <% end %>
+
+
+  
+
+<% end %>
+<%= link_to "Go Back", {:controller => "posts", :action => "index", :college_id => @collegeid} %>

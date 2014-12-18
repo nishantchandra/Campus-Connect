@@ -6,6 +6,7 @@ CampusConnect::Application.routes.draw do
   resources :colleges
 
   post "posts/search" => "posts#search"
+   post "posts/searchpost" => "posts#searchpost"
 
    root :to => 'static_pages#home'
 

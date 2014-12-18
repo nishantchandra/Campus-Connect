@@ -5,6 +5,7 @@
 
   <form id="searchbox" action="/posts/search" method="post">
     <input id="search" type="text" placeholder="Type here" name="searchcomments">
+    <input id="collegeid" type="hidden" value= <%= @collegeid %> name="temp">
     <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
     <input id="submit" type="submit" value="Search">
   </form>
